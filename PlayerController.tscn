@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbjqotob2tooc"]
+
+[ext_resource type="Script" path="res://PlayerController.cs" id="1_fckwv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uhur1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_copcn"]
+
+[node name="PlayerController" type="CharacterBody3D"]
+script = ExtResource("1_fckwv")
+canNoclip = true
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_uhur1")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_copcn")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88055, -0.00530863)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00375032, 0)
+current = true
